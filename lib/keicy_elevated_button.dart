@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class KeicyElevatedButton extends StatelessWidget {
   final String? text;
+  final Widget? child;
   final Widget? leftWidget;
   final Widget? rightWidget;
   final TextStyle? textStyle;
@@ -21,7 +22,8 @@ class KeicyElevatedButton extends StatelessWidget {
 
   const KeicyElevatedButton({
     Key? key,
-    @required this.text,
+    this.text = "",
+    this.child,
     this.leftWidget,
     this.rightWidget,
     this.backColor,
@@ -62,7 +64,7 @@ class KeicyElevatedButton extends StatelessWidget {
       child: Wrap(
         children: [
           leftWidget ?? const SizedBox(),
-          Text(text!, style: textStyle),
+          child ?? Text(text!, style: textStyle),
           rightWidget ?? const SizedBox(),
         ],
       ),
